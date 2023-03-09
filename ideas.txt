@@ -1,0 +1,31 @@
+online diary 
+
+Front page 
+- search by key word or search by date 
+- add new post 
+- sets date as current date but can be changed 
+- forward and back buttons to go to previous or next post 
+- add password 
+
+- add posts to database 
+
+Home page:
+login (1)/ sign up (2)
+
+(1) - check if username and password match database... and open blog page (alert welcome back)
+(2) - check username not in use - same username & password in database (alert user created)
+
+blog page:
+- render all entries from table in db that have specific user id / username 
+- sort by date asc / date desc / title asc / title desc 
+- have button on each entry to edit / delete entry 
+
+- include navbar via ejs which can search entries by date / key word (highlight key word searched for) - render only entries matching that description
+- include add new entry button 
+
+new entry / edit entry page:
+- if edit entry, render entry info inside input 
+- set date on default to current date but have option to change 
+- have a --- char left on input 
+
+
