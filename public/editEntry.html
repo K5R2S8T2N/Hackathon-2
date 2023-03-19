@@ -8,12 +8,18 @@
     <title>Edit Entry Page</title>
 </head>
 <body>
-    <button id="backToEntriesList">back</button>
-    <form>
-        <label for="entryText">Entry</label><input type="text" name="entryText" id="entryText">
-        <button id="saveBtn">Save</button>
-    </form>
-    <p id="root"></p>
+    <div id="editEntryPage">
+        <div id="editEntriesTop">
+            <h1 id="editEntriesTitle">Editing Page</h1>
+        </div>
+        <button id="backToEntriesList">back</button>
+        <form id="editEntryForm">
+            <label for="entryText" id="entryTextLabel">Entry</label><textarea name="entryText" id="entryText"></textarea>
+            <button id="saveBtn">Save</button>
+        </form>
+        <p id="noCharLeft"></p>
+        <p id="root"></p>
+    </div>
     <script src="editEntry.js"></script>
 </body>
 </html>

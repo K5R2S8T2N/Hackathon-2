@@ -1,13 +1,329 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(222,199,158,255);
+}
+
+*{
+    box-sizing: border-box;
+}
+
 .diaryEntry{
-    border: 1px solid black;
-    padding: 10px;
+    border: 4px solid rgb(211, 181, 110);
+    background-color: rgb(239, 222, 182);
+    border-radius: 16px;
+    padding: 20px;
     overflow: wrap;
-    overflow-y: scroll;
     width: 300px;
     height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 30px;
+}
+
+.diaryText{
+    width: 280px;
+    overflow: wrap;
+    word-wrap: break-word;
+    margin: 10px 20px 0px 20px;
+    text-align: center;
+    color: rgb(165, 110, 42);
+    font-family: Marker Felt, fantasy;
+    line-height: 24px;
+}
+#entriesPageTopBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 100px 0px 100px;
+    border: 3px solid rgb(207, 179, 117);
+    border-radius: 26px;
+    background-color: rgb(244, 233, 204);
+    margin-bottom: 20px;
+}
+
+#diaryEntries{
+    border: 3px solid rgb(181, 149, 79);
+    border-radius: 20px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    padding: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+}
+
+#entriesPage{
+    padding: 20px;
+    background-image: url("https://media.istockphoto.com/id/1283615709/photo/old-brown-paper-parchment-background-design-with-distressed-vintage-stains-and-ink-spatter.jpg?s=612x612&w=0&k=20&c=6jgpHN1OBQGtMZSbGPkIBKaXK0N0eNAh6kdH4FzrEFQ=");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+
+#loginPage, #registrationPage, #editEntryPage, #frontPage{
+    background-repeat: no-repeat;
+    background-size:80% 80%;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#frontPage{
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    background-image: url("https://cdn.pixabay.com/photo/2012/04/03/13/28/diary-25157_640.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#goToLogin, #goToRegister{
+    border: 2px solid burlywood;
+    border-radius: 10px;
+    width: 200px;
+    height: 60px;
+    font-size: 32px;
+    font-family: cursive;
+    background-color: rgb(242, 228, 188);
+    color: rgb(122, 60, 9);
+    font-weight: 600;
+    margin: 20px;
+
+}
+
+#entryButtonsDiv{
+    display: flex;
+    justify-content: center;
+    align-items: space-around;
+}
+
+.entryButtons{
+    margin: 10px;
+    border: 2px solid rgb(171, 124, 62);
+    border-radius: 10px;
+    width: 70px;
+    height: 40px;
+    font-size: 18px;
+    font-family: cursive;
+    background-color: rgb(222, 195, 155);
+    color: rgb(123, 86, 58);
+    font-weight: 700;
+}
+
+#entriesMiddle, #entriesBottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-family: cursive;
+    font-size: 24px;
+    font-weight: 500;
+    color:rgb(134, 88, 35);
+}
+
+#newEntry, #logoutBtn{
+    border: 2px solid rgb(190, 149, 95);
+    border-radius: 10px;
+    width: 130px;
+    height: 60px;
+    font-size: 32px;
+    font-family: cursive;
+    background-color: rgb(233, 209, 155);
+    color: rgb(156, 106, 37);
+    font-weight: 600;
+    margin: 20px;
+}
+
+#entriesPageTitle, #userTitle{
+    color: rgb(131, 90, 36);
+    margin: 5px;
+}
+
+#entriesPageTitle{
+    font-family: American Typewriter, cursive;
+
+}
+
+#userTitle{
+    font-family: URW Chancery L, cursive;
+}
+
+#loginPage, #registrationPage{
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#loginPage{
+    background-image: url("https://png.pngtree.com/png-clipart/20220131/original/pngtree-cartoon-pink-heart-shaped-padlock-which-is-one-element-of-valentine-png-image_7258523.png");
+}
+
+#registrationPage{
+    background-image: url("https://clipart.coolclips.com/480/vectors/tf05080/CoolClips_busi1169.png");
+}
+
+#loginTitle, #registrationTitle, #editEntriesTitle{
+    font-family: Jazz LET, fantasy;
+    font-weight: bolder;
+    font-size: 64px;
+    color: rgb(103, 77, 46);
+    background-color: rgb(255, 236, 190);
+    padding: 5px;
+    margin: 15px;
+    border-radius: 15px;
+}
+
+#loginTop, #registrationTop, #editEntriesTop{
+    border: 5px solid rgb(159, 134, 104);
+    border-radius: 20px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+    margin-top: 20px;
+}
+
+#loginForm, #registrationForm, #editEntryForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    padding: 30px;
+    opacity: 0.95;
+    border-radius: 20px;
+}
+#loginForm{
+    background-color: rgb(223, 188, 142);
+}
+
+#registrationForm{
+    background-color: rgb(223, 196, 143);
+}
+
+#usernameLogin, #passwordLogin, #username, #password, #entryText{
+    margin: 10px;
+    border: 2px solid rgb(142, 108, 77);
+    border-radius: 5px;
+    background: rgb(235, 223, 180);
+    color: rgb(98, 71, 45);
+}
+
+#root{
+    padding: 10px;
+    font-family: cursive;
+    border-radius: 10px;
+    font-weight: 600;
+    color: rgb(142, 85, 49);
+}
+
+#backToHome, #backToEntriesList{
+    border: 2px solid rgb(187, 143, 67);
+    border-radius: 10px;
+    width: 80px;
+    height: 44px;
+    font-size: 26px;
+    font-family: cursive;
+    background-color: rgb(238, 219, 176);
+    color: rgb(155, 118, 64);
+    font-weight: 600;
+    margin: 20px;
+}
+
+#loginBtn, #registerBtn, #saveBtn{
+    border: 2px solid rgb(187, 143, 67);
+    font-size: 16px;
+    height: 30px;
+    border-radius: 10px;
+    font-family: cursive;
+    background-color: rgb(238, 219, 176);
+    color: rgb(155, 118, 64);
+    font-weight: 600;
+}
+
+#saveBtn{
+    width: 50px;
+}
+
+#loginBtn{
+    width: 60px;
+}
+
+#registerBtn{
+    width: 70px;
+}
+
+#usernameLabelL, #passwordLabelL, #usernameLabelR, #passwordLabelR, #entryTextLabel{
+    font-size: 18px;
+    margin-bottom: -3px;
+    font-weight: 900;
+    font-family: Bradley Hand, cursive;
+    background-color: rgb(205, 169, 121);
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#usernameLabelL, #passwordLabelL{
+    color: rgb(110, 79, 53);
+    background-color: rgb(205, 169, 121);
+}
+
+#usernameLabelR, #passwordLabelR{
+    color: rgb(120, 93, 62);
+    background-color: rgb(211, 182, 128);
+}
+
+/* remove blue outline  */
+#usernameLogin:focus, #passwordLogin:focus, #username:focus, #password:focus{
+    outline: none;
+    background-color: rgb(221, 197, 150);
+    border-color: rgb(121, 90, 61);
+}
+
+#editEntryPage{
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    background-image: url("https://img.paperform.co/fetch/w_1200,f_auto/https://s3.amazonaws.com/pf-upload-01/u-30524/1/2021-01-04/qk23kss/writing-1043622_960_720.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#editEntryForm{
+    background-color: rgb(241, 218, 166);
+}
+
+#entryText{
+    width: 400px;
+    height: 300px;
+    resize: none;
+}
+#entryText:focus{
+    outline: none;
+    background-color: rgb(228, 206, 145);
+    border-color: rgb(123, 110, 91);
+}
+
+#noCharLeft{
+    border-radius: 7px;
+    padding: 5px;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-weight: 900px;
+    color: rgb(124, 94, 49); 
+}
+
+#entryTextLabel{
+    color: rgb(143, 106, 63);
+    background-color: rgb(217, 195, 142);
 }

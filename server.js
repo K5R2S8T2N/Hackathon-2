@@ -5,6 +5,8 @@ const cors = require('cors');
 const path = require('path');
 let notes = [];
 let signedIn = "";
+let messageToUpdate = "";
+let newNote = true;
 
 app.use(express.json());
 
@@ -88,7 +90,7 @@ app.post('/login', (req, res) => {
                     notes.push(value.notes);
                 })
                 console.log(signedIn);
-                res.send({message: `login successful`})
+                res.send({message: `login successful`});
             });
         } else {
             console.log("username or password is incorrect");
@@ -97,9 +99,20 @@ app.post('/login', (req, res) => {
     });     
 });
 
+
 // for displaying diary entries 
 app.post('/entries', (req, res) => {
-    res.send({data: notes});
+    db
+    .select('notes').from('users')
+    .where({ username:`${signedIn}`})
+    .then(data => {
+        console.log(data);
+        notes = [];
+        data.forEach((value) => {
+            notes.push(value.notes);
+        })
+        res.send({data: notes, user: signedIn});
+    });
 })
 
 // logout 
@@ -122,15 +135,54 @@ app.post('/deleteNote', (req, res) => {
         )
 });
 
-// saving new note 
+// saving note 
 app.post('/new', (req, res) => {
     const {note} = req.body;
     console.log(note, signedIn);
-    db('users')
-        .insert({ username: `${signedIn}`, notes: `${note}`})
-        .then(user =>
-            res.send({message: `new note added successfully, you may need to re-login to view note`})
-        )
+    // get rid of glitch of adding to data base with empty username
+    if(!signedIn.length == 0){
+        if(newNote){
+            db('users')
+            .insert({ username: `${signedIn}`, notes: `${note}`})
+            .then(user =>
+                res.send({message: `new note added successfully`})
+            ) 
+        } else {
+            db('users')
+            .where('username', `${signedIn}`)
+            .andWhere('notes', `${messageToUpdate}`)
+            .update({
+                notes: `${note}`
+            },
+                ['notes'])
+            .then(note => {
+                res.send({message: `note updated successfully`})
+                newNote = true;
+                messageToUpdate = "";
+            })
+        }
+    } 
 });
 
 app.listen(port, () => console.log('Server listening on port ' + port));
+
+// getting note to edit 
+app.post('/editedNote', (req, res) => {
+    newNote = false;
+    const {notes} = req.body;
+    messageToUpdate = notes;
+    res.send({message: `note to edit saved in server successfully`});
+
+})
+
+// editing note 
+app.post('/edit', (req, res) => {
+    res.send({note: `${messageToUpdate}`});
+})
+
+// back to entries 
+app.post('/backToEntries', (req, res) => {
+    newNote = true;
+    messageToUpdate = '';
+    res.send({message: `edit page reset successfully`})
+})

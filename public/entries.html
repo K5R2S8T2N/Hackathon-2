@@ -8,12 +8,24 @@
     <title>Diary entries </title>
 </head>
 <body>
-    <h1>Entries Page</h1>
-    <button id="newEntry">New</button>
-    <p>If you cannot see all of your entries, please re-login</p>
-    <div id="diaryEntries"></div>
-    <button id="logoutBtn">Logout</button>
-    <p>Please remember to click <i>Logout</i> before leaving the site</p>
+    <div id="entriesPage">
+        <div id="entriesPageTopBar">
+            <h1 id="entriesPageTitle">Entries Page</h1>
+            <h2 id="userTitle"></h2>
+        </div>
+        <div id="entriesMiddle">
+            <button id="newEntry">New</button>
+            <p>If you cannot see all of your entries, please re-login</p>
+        </div>
+        
+        <div id="diaryEntries"></div>
+        <div id="entriesBottom">
+            <button id="logoutBtn">Logout</button>
+            <p>Please remember to click <i><b>"Logout"</b></i> before leaving the site</p>
+        </div>
+        
+    </div>
+    
     <script src="entries.js"></script>
 </body>
 </html>
