@@ -3,6 +3,8 @@ const app = express();
 const port = 3000;
 const cors = require('cors');
 const path = require('path');
+require('dotenv').config();
+
 let notes = [];
 let signedIn = "";
 let messageToUpdate = "";
@@ -13,11 +15,11 @@ app.use(express.json());
 const db = require('knex')({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
-        user: 'postgres',
-        password: 'ryJXQ3Qxu7',
-        database: 'Hackathon2',
-        port: "5432",
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASS,
+        database: process.env.DB_NAME,
+        port: process.env.DB_PORT,
     }
 });
 app.set("db", db);
