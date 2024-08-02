@@ -26,3 +26,4 @@ yarn-debug.log*
 yarn-error.log*
 
 /old_server.txt
+/old_pg_backup.sql
